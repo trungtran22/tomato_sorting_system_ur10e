@@ -35,7 +35,7 @@ def detecting():
         pipeline = dai.Pipeline()   
         FRAME_SIZE = (640, 640)
         # DET_INPUT_SIZE = (640, 640)
-        blob_path = "/home/trungtran/Desktop/Thesis/Dataset/result_14/tomato.blob"
+        blob_path = "tomato_data/tomato.blob"
         labelMap = ["green","pink","redripe","turning"]
         syncNN = True
         # Define a source - color camera
