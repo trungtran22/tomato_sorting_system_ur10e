@@ -10,7 +10,7 @@
 - The camera for this project is OAK-D Depth Camera. For more information about ROS and OAK-D, it can be found here [depthai_ros](https://github.com/luxonis/depthai-ros). The blob file for the tomato can be found in the **tomato_data** folder. The code for the camera is available in the script folder.\
 ![](https://github.com/trungtran22/tomato_sorting_system_ur10e/blob/main/Pics/OAK.png)
 
-- A few pictures of the project
+### A few pictures of the project
 **Robot System Setup**\
 ![](https://github.com/trungtran22/tomato_sorting_system_ur10e/blob/main/Pics/Robot_Sys.png)
 \
