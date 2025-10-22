@@ -3,3 +3,7 @@
 ### ROS 1 Noetic and YOLOv8 for Object Detection
 Robot System Setup\
 ![](https://github.com/trungtran22/tomato_sorting_system_ur10e/blob/main/Pics/Robot_Sys.png)
+
+Conveyor Belt Setup and Wiring\
+![](https://github.com/trungtran22/tomato_sorting_system_ur10e/blob/main/Pics/Conveyor.png)
+![Wiring](https://github.com/trungtran22/tomato_sorting_system_ur10e/blob/main/Pics/Conveyor_Electrical.png)
