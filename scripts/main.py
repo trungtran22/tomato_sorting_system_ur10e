@@ -21,22 +21,16 @@ class DataHolder:
 
             self.label = String()
             self.radius = Int32()
-
             self.sub = [rospy.Subscriber("/tomato_position", Pose, self.poseCallback, queue_size=10)]
             self.sub_label = [rospy.Subscriber("/tomato_label", String, self.labelCallback, queue_size=10)]
             self.sub_radius = [rospy.Subscriber("/tomato_rad", Int32, self.radiusCallback, queue_size=10)]
-            # rospy.spin()
-            
-            
-            
+            # rospy.spin()         
     def poseCallback(self, msg):
         self.pose = msg
-
     def labelCallback(self, msg):
         self.label = msg
     def radiusCallback(self, msg):
         self.radius = msg
-
 
 def picking(x_,y_):
     x = (y_/1000)*(-1.230) - 0.31
@@ -49,40 +43,24 @@ def picking(x_,y_):
     rg2.open_gripper()
     rtde_c.moveL([x, y, 0.69, 0, 0, 1.572], 2.0, 1.5)
     rtde_c.moveL([x, y, 0.53, 0, 0, 1.572], 2.0, 1.5)
-    # arm.go_to_pose_goal(x,y,0.69,0.0, 1.0, 0.0, 0.0)
-    # arm.go_to_pose_goal(x,y,0.53,0.0, 1.0, 0.0, 0.0)
-    # arm.go_to_goal(x,y,0.69,0,0,1.572)
-    # arm.go_to_goal(x,y,0.53,0,0,1.572)
-    #  print("Tomato_width:", width)
-    #  rg2.move_gripper(r,100)
-    #  rg2.close_gripper(20)
     rg2.close_gripper(90)
     time.sleep(3)
     # time.sleep(4)
     rtde_c.moveL([x, y, 0.69, 0, 0, 1.572], 2.0, 1.5)
-    # arm.go_to_pose_goal(x,y,0.69,0.0, 1.0, 0.0, 0.0)
-    # arm.go_to_goal(x,y,0.69,0,0,1.572)
 
 def put_red_small():
     # arm.go_to_initial_state()
     rtde_c.moveL([-0.083, 0.923, 0.69, 0, 0, 1.572], 2.0, 1.5)
     rtde_c.moveL([-0.083,0.923, 0.53, 0, 0, 1.572], 2.0, 1.5)
-    # arm.go_to_pose_goal(0.083,-0.923, 0.69, 0.0, 1.0, 0.0, 0.0)
-    # arm.go_to_pose_goal(0.083,-0.923, 0.53, 0.0, 1.0, 0.0, 0.0)
-    
     rg2.open_gripper()
     time.sleep(1)
     rtde_c.moveL([-0.083, 0.923, 0.69, 0, 0, 1.572], 2.0, 1.5)
     rtde_c.moveL([-0.176, 0.666, 0.86, 0, 0, 1.572], 2.0, 1.5)
     
-
 def put_green():
     # arm.go_to_initial_state()
     rtde_c.moveL([-0.677, 0.008, 0.69, 0, 0, 1.572], 2.0, 1.5)
-    rtde_c.moveL([-0.677, 0.008, 0.35, 0, 0, 1.572], 2.0, 1.5)
-    # arm.go_to_pose_goal(0.083,-0.923, 0.69, 0.0, 1.0, 0.0, 0.0)
-    # arm.go_to_pose_goal(0.083,-0.923, 0.53, 0.0, 1.0, 0.0, 0.0)
-    
+    rtde_c.moveL([-0.677, 0.008, 0.35, 0, 0, 1.572], 2.0, 1.5)   
     rg2.open_gripper()
     time.sleep(1)
     rtde_c.moveL([-0.677, 0.008, 0.69, 0, 0, 1.572], 2.0, 1.5)
@@ -92,9 +70,6 @@ def put_turning():
     # arm.go_to_initial_state()
     rtde_c.moveL([-0.778, -0.214, 0.69, 0, 0, 1.572], 2.0, 1.5)
     rtde_c.moveL([-0.778, -0.214, 0.35, 0, 0, 1.572], 2.0, 1.5)
-    # arm.go_to_pose_goal(0.083,-0.923, 0.69, 0.0, 1.0, 0.0, 0.0)
-    # arm.go_to_pose_goal(0.083,-0.923, 0.53, 0.0, 1.0, 0.0, 0.0)
-    
     rg2.open_gripper()
     time.sleep(1)
     rtde_c.moveL([-0.778, -0.214, 0.69, 0, 0, 1.572], 2.0, 1.5)
@@ -104,9 +79,6 @@ def put_pink():
     # arm.go_to_initial_state()
     rtde_c.moveL([-0.518, -0.221, 0.69, 0, 0, 1.572], 2.0, 1.5)
     rtde_c.moveL([-0.518, -0.221, 0.35, 0, 0, 1.572], 2.0, 1.5)
-    # arm.go_to_pose_goal(0.083,-0.923, 0.69, 0.0, 1.0, 0.0, 0.0)
-    # arm.go_to_pose_goal(0.083,-0.923, 0.53, 0.0, 1.0, 0.0, 0.0)
-    
     rg2.open_gripper()
     time.sleep(1)
     rtde_c.moveL([-0.518, -0.221, 0.69, 0, 0, 1.572], 2.0, 1.5)
@@ -116,13 +88,9 @@ def put_red_big():
     # arm.go_to_initial_state()
     rtde_c.moveL([0.252,0.923, 0.69, 0, 0, 1.572], 2.0, 1.5)
     rtde_c.moveL([0.252,0.923, 0.53, 0, 0, 1.572], 2.0, 1.5)
-    # arm.go_to_pose_goal(-0.252,-0.923, 0.69, 0.0, 1.0, 0.0, 0.0)
-    # arm.go_to_pose_goal(-0.252,-0.923, 0.53, 0.0, 1.0, 0.0, 0.0)
-    
     rg2.open_gripper()
     time.sleep(1)
     rtde_c.moveL([0.252,0.923, 0.69, 0, 0, 1.572], 2.0, 1.5)
-    # arm.go_to_pose_goal(-0.252,-0.923, 0.69, 0.0, 1.0, 0.0, 0.0)
     rtde_c.moveL([-0.176, 0.666, 0.86, 0, 0, 1.572], 2.0, 1.5)
     
 if __name__=="__main__":
@@ -175,31 +143,24 @@ if __name__=="__main__":
                     count += 1
                     if count == 50:
                         try:
-                            # for i in rad:
-                            #     if i < 10: 
                             rad.remove(0)
                             break
                         except:
                             break
-
             radi = sum(rad)/len(rad)
             # print("radius: ", radi)
             if data.label.data == "redripe":
-                        count_red +=1
-                        pub_count_red.publish(count_red)
-                        print("Number of red: ", count_red)
-                        print("Tomato width:", radi)
-                        picking(data.pose.position.x, data.pose.position.y)
-                        if radi > 0:
-                            # print("Tomato width:", radi )
-                            # print("Tomato width:", radi*8 )
-                            rad = []
-                            put_red_big()
-                        else:
-                            # print("Tomato width:", radi*8 )
-                            rad = []
-                            # print("Number of Red: ",count_red)
-                            put_red_small()
+                count_red +=1
+                pub_count_red.publish(count_red)
+                print("Number of red: ", count_red)
+                print("Tomato width:", radi)
+                picking(data.pose.position.x, data.pose.position.y)
+                if radi > 0:
+                   rad = []
+                   put_red_big()
+                else:
+                   rad = []
+                   put_red_small()
             elif data.label.data == "green":
                 count_green +=1
                 print("Number of green: ", count_green)
